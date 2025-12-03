@@ -1,6 +1,6 @@
 <template>
     <div>
-      <ContentRenderer markdownPath="/src/content/home.md" />
+      <ContentRenderer markdownPath="/content/home.md" />
     </div>
   </template>
   

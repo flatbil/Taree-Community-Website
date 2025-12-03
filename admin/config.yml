@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "src/content/home.md"
+        file: "public/content/home.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero text", name: "hero", widget: "text" }
@@ -19,7 +19,7 @@ collections:
 
   - name: "news"
     label: "News"
-    folder: "src/content/news"
+    folder: "public/content/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
