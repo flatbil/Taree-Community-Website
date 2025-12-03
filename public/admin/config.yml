@@ -2,9 +2,6 @@ backend:
   name: github
   repo: yourusername/Taree-Community-Website
   branch: main # or your default branch
-  auth_type: implicit
-  base_url: https://tareecommunityhoa.netlify.app
-  open_authoring: false
 
 
 media_folder: "public/uploads"
