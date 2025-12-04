@@ -1,11 +1,7 @@
 backend:
   name: github
-  repo: yourusername/Taree-Community-Website
-  branch: main # or your default branch
-  auth_type: implicit
-  base_url: https://tareecommunityhoa.netlify.app
-  open_authoring: false
-  client_id: Ov23lidbfjy9XhEdfTaY
+  repo: flatbil/Taree-Community-Website
+  branch: main
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -19,9 +15,7 @@ collections:
         file: "public/content/home.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Hero text", name: "hero", widget: "text" }
           - { label: "Body", name: "body", widget: "markdown" }
-
   - name: "news"
     label: "News"
     folder: "public/content/news"
