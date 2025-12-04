@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   repo: flatbil/Taree-Community-Website
-  branch: main
+  branch: main # or your default branch
+
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -15,7 +16,9 @@ collections:
         file: "public/content/home.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero text", name: "hero", widget: "text" }
           - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "news"
     label: "News"
     folder: "public/content/news"
