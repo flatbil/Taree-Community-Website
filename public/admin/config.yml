@@ -5,9 +5,7 @@ backend:
   auth_type: implicit
   auth_scope: repo
   client_id: Ov23lidbfjy9XhEdfTaY
-  # base_url optional — helpful if you want to be explicit
   base_url: https://tareecommunityhoa.netlify.app
-  auth_endpoint: /admin/authenticate
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
