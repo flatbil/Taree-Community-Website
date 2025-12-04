@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# ensure all admin routes resolve to the admin index (for SPA client-side routing)
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+  force = true
+
+# also redirect plain /admin to the index
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"

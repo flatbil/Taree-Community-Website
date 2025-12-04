@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Welcome to the Taree Community Website",
+    "date": "2025-12-01",
+    "slug": "2025-12-01-welcome",
+    "summary": "Introducing the new community website and CMS for board members to post news and updates.",
+    "tags": ["announcement"],
+    "published": true
+  },
+  {
+    "title": "Pool Maintenance Scheduled",
+    "date": "2025-11-15",
+    "slug": "2025-11-15-pool-maintenance",
+    "summary": "Community pool will be closed for routine maintenance from Nov 20–22.",
+    "tags": ["maintenance"],
+    "published": true
+  }
+]

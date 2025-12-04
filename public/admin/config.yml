@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: flatbil/Taree-Community-Website
+  # repo: flatbil/Taree-Community-Website
   branch: main
   # auth_type: implicit
   # auth_scope: repo
@@ -31,3 +31,20 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+  
+  - name: "news_index"
+    label: "News index"
+    files:
+      - label: "News Index"
+        name: "news_index"
+        file: "public/content/news/index.json"
+        fields:
+          - { label: "News items", name: "items", widget: "list", field: {
+              label: "Item", name: "item", widget: "object", fields: [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Date", name: "date", widget: "datetime" },
+                { label: "Slug", name: "slug", widget: "string" },
+                { label: "Summary", name: "summary", widget: "text" }
+              ]
+            }
+          }

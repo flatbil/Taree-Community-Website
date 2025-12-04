@@ -1,18 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Site Admin</title>
   </head>
   <body>
+    <h1 style="display:none">Admin</h1>
+
+    <!-- Netlify Identity widget (optional but recommended) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <!-- optional: configure -->
+
     <script>
+      // Initialize identity widget if available
       if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
         window.netlifyIdentity.on("init", user => {
           if (!user) {
-            // Check for invite token, recovery token, or email confirmation in URL hash
-            // and automatically open the identity modal to handle them
             const hash = window.location.hash;
             if (hash && (hash.includes("invite_token") || hash.includes("recovery_token") || hash.includes("confirmation_token"))) {
               window.netlifyIdentity.open();
@@ -22,6 +29,9 @@
             });
           }
         });
+      } else {
+        // If netlifyIdentity is not present, log a message to help debugging
+        console.warn("Netlify Identity widget not found. Ensure Identity is enabled in Netlify and the widget script is reachable.");
       }
     </script>
   </body>

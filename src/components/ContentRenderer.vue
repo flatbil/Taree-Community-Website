@@ -3,20 +3,33 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { marked } from 'marked'
 
-const props = defineProps({ markdownPath: String })
+const props = defineProps({
+  markdownPath: {
+    type: String,
+    required: true
+  }
+})
+
 const html = ref('')
 
-onMounted(async () => {
+async function loadMarkdown(path) {
+  html.value = '<p>Loading...</p>'
   try {
-    const r = await fetch(props.markdownPath)
-    const text = await r.text()
+    const res = await fetch(path)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const text = await res.text()
     html.value = marked.parse(text)
   } catch (e) {
-    html.value = '<p>Error loading content.</p>'
+    html.value = `<p>Error loading content: ${e.message}</p>`
   }
+}
+
+onMounted(() => loadMarkdown(props.markdownPath))
+watch(() => props.markdownPath, (p) => {
+  if (p) loadMarkdown(p)
 })
 </script>
 
