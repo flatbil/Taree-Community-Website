@@ -5,6 +5,7 @@ backend:
   auth_type: implicit
   auth_scope: repo
   client_id: Ov23lidbfjy9XhEdfTaY
+  base_url: https://api.netlify.com
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
