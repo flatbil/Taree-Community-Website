@@ -8,7 +8,23 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <!-- optional: configure -->
     <script>
-      // If you need any custom widget registration, add it here.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            // Check for invite token, recovery token, or email confirmation in URL hash
+            // and automatically open the identity modal to handle them
+            const hash = window.location.hash;
+            if (hash && (hash.includes("invite_token") || hash.includes("recovery_token") || hash.includes("confirmation_token"))) {
+              window.netlifyIdentity.open();
+            }
+          }
+        });
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+        // Initialize the widget - this is required to trigger the "init" event
+        window.netlifyIdentity.init();
+      }
     </script>
   </body>
 </html>
