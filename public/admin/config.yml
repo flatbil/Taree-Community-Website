@@ -1,8 +1,10 @@
 backend:
   name: github
   repo: flatbil/Taree-Community-Website
-  branch: main # or your default branch
-
+  branch: main
+  auth_type: implicit
+  # base_url optional — helpful if you want to be explicit
+  base_url: https://tareecommunityhoa.netlify.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
